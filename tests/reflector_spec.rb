@@ -11,16 +11,16 @@ describe Reflector, 'when reflecting simple input to output' do
         @reflector = Reflector.new(cipher)
       end
 
-      it('reflecting 0 should return 0') { @reflector.reflect(0).should == 0 }
+      it('reflecting 0 should return 0')  { expect(@reflector.reflect(0)).to eq(0) }
 
       it('reflecting 0 twice should return 0 both times') {
-        @reflector.reflect(0).should == 0
-        @reflector.reflect(0).should == 0
+        expect(@reflector.reflect(0)).to eq(0)
+        expect(@reflector.reflect(0)).to eq(0)
       }
 
-      it('reflecting 1 should return 1') { @reflector.reflect(1).should == 1 }
+      it('reflecting 1 should return 1') { expect(@reflector.reflect(1)).to eq(1) }
 
-      it('reflecting 2 should return 2') { @reflector.reflect(2).should == 2 }
+      it('reflecting 2 should return 2') { expect(@reflector.reflect(2)).to eq(2) }
 
     end
 

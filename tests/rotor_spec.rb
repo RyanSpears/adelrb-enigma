@@ -8,29 +8,29 @@ describe Rotor do
         cipher = (0..2).to_a
         orientation = 0
         rotation_frequency = 1
-        @rotor = Rotor.new(cipher, orientation, rotation_frequency)
+        @rotor = Rotor.new('Rotor 1',cipher, orientation, rotation_frequency)
       end
 
       it 'first encoding of 0 should return 0' do
-        @rotor.encode(0).should == 0
+        expect(@rotor.encode(0)).to eq(0)
       end
 
       it 'second encode of 0 should return 1' do
         @rotor.encode(0)
-        @rotor.encode(0).should == 1
+        expect(@rotor.encode(0)).to eq(1)
       end
 
       it 'third encode of 0 should return 2' do
         @rotor.encode(0)
         @rotor.encode(0)
-        @rotor.encode(0).should == 2
+        expect(@rotor.encode(0)).to eq(2)
       end
 
       it 'fourth encode of 0 should return 0' do
         @rotor.encode(0)
         @rotor.encode(0)
         @rotor.encode(0)
-        @rotor.encode(0).should == 0
+        expect(@rotor.encode(0)).to eq(0)
       end
     end
 
@@ -39,22 +39,22 @@ describe Rotor do
         cipher = (0..2).to_a
         orientation = 1
         rotation_frequency = 1
-        @rotor = Rotor.new(cipher, orientation, rotation_frequency)
+        @rotor = Rotor.new('Rotor 1', cipher, orientation, rotation_frequency)
       end
 
       it 'first encoding of 0 should return 1' do
-        @rotor.encode(0).should == 1
+        expect(@rotor.encode(0)).to eq(1)
       end
 
       it 'second encoding of 0 should return 2' do
         @rotor.encode(0)
-        @rotor.encode(0).should == 2
+        expect(@rotor.encode(0)).to eq(2)
       end
 
       it 'third encoding of 0 should return 0' do
         @rotor.encode(0)
         @rotor.encode(0)
-        @rotor.encode(0).should == 0
+        expect(@rotor.encode(0)).to eq(0)
       end
     end
 
@@ -63,7 +63,7 @@ describe Rotor do
         cipher = ('A'..'Z').to_a
         orientation = 0
         rotation_frequency = 1
-        @reflector = Rotor.new(cipher, orientation, rotation_frequency)
+        @reflector = Rotor.new('Rotor 1', cipher, orientation, rotation_frequency)
       end
 
       it 'raises exception if scrambled is not an integer' do
